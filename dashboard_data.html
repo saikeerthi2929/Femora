@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Data - Femora</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="data-body">
+      <div class="background-container">
+  <img src="assets/background22.jpg" class="bg-media" alt="Background" />
+</div>
+
+  <div class="data-container">
+    <h1>📁 Saved Emergency Data</h1>
+
+    <!-- Audio from voice trigger -->
+    <div class="section">
+      <h3>🎤 Voice Trigger Recording</h3>
+      <audio id="voiceAudio" controls></audio>
+    </div>
+
+    <!-- Audio from emergency -->
+    <div class="section">
+      <h3>🚨 Emergency Audio</h3>
+      <audio id="emergencyAudio" controls></audio>
+    </div>
+
+    <!-- Image from emergency -->
+    <div class="section">
+      <h3>📸 Snapshot (Emergency)</h3>
+      <img id="snapshotImage" width="300" alt="Emergency Snapshot" />
+    </div>
+
+    <!-- Video from live cam -->
+    <div class="section">
+      <h3>📹 Live Camera Recording</h3>
+      <video id="liveVideo" width="320" height="240" controls></video>
+    </div>
+  </div>
+
+  <script>
+    // Load audio and video from localStorage
+    document.getElementById('voiceAudio').src = localStorage.getItem('voiceRecording') || "";
+    document.getElementById('emergencyAudio').src = localStorage.getItem('emergencyAudio') || "";
+    document.getElementById('snapshotImage').src = localStorage.getItem('emergencySnapshot') || "";
+    document.getElementById('liveVideo').src = localStorage.getItem('liveCameraVideo') || "";
+  </script>
+</body>
+</html>

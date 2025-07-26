@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Femora | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;600&display=swap" rel="stylesheet" />
+</head>
+<body class="homepage">
+
+  <!-- Optional background: Add your image or video here -->
+  <div class="background-container">
+    <img src="assets/background25.png" class="bg-media" alt="Background" />
+    <!-- <img src="assets/bg.jpg" class="bg-media" alt="Background Image" /> -->
+    <!-- OR -->
+    <!-- <video autoplay muted loop class="bg-media"><source src="assets/bg.mp4" type="video/mp4"></video> -->
+  </div>
+
+  <!-- Centered Title & Subtitle -->
+  <div class="glass-bg">
+    <h1 class="main-title">FEMORA</h1>
+    <p class="subtitle">Empowering Safety. Enabling Freedom.</p>
+  </div>
+
+  <!-- Get Started Button Bottom Center -->
+  <div class="get-started-wrapper">
+    <a href="dashboard.html" class="get-started-btn">Get Started</a>
+  </div>
+
+  <!-- Only dark mode toggle -->
+  <div class="toggle-container">
+    <button class="toggle-btn" id="darkToggle">🌗</button>
+  </div>
+
+  <script>
+    const darkToggle = document.getElementById("darkToggle");
+    darkToggle.onclick = () => {
+      document.body.classList.toggle("dark-mode");
+    };
+  </script>
+</body>
+</html>

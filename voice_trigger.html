@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Voice Trigger - Femora</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="voice-body">
+      <div class="background-container">
+  <img src="assets/background22.jpg" class="bg-media" alt="Background" />
+</div>
+  <div class="voice-container">
+    <h1>🎙️ Voice Trigger</h1>
+    <p>Say <strong>“Help”</strong> to activate emergency response.</p>
+    <p>Status: <span id="status">Listening...</span></p>
+
+    <button onclick="startListening()">🔁 Restart Listening</button>
+    <p id="action-msg" style="color: lime;"></p>
+  </div>
+
+  <script src="scripts/voice.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Femora Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body class="dashboard-body">
+    <div class="background-container">
+  <img src="assets/background20.jpg" class="bg-media" alt="Background" />
+    </div>
+
+
+  <div class="dashboard-container">
+    <h1 id="greeting">Hi, <span id="username">User</span> 👋</h1>
+    <p class="safe-text">You are safe.</p>
+    <p class="location">📍 Your Current Location: <span id="location">Detecting...</span></p>
+
+    <div class="button-group">
+      <button onclick="location.href='voice_trigger.html'" class="feature-btn">🎙️ Activate Voice Trigger</button>
+      <button onclick="location.href='hand_trigger.html'" class="feature-btn">✋ Activate Hand Trigger</button>
+      <button onclick="location.href='live_camera.html'" class="feature-btn">📹 Live Camera Feed</button>
+      <button onclick="location.href='fake_call.html'" class="feature-btn">📞 Fake Call</button>
+      <button onclick="location.href='emergency.html'" class="feature-btn">🚨 Emergency SOS</button>
+      <button onclick="location.href='dashboard_data.html'" class="feature-btn">📁 Dashboard</button>
+    </div>
+  </div>
+
+  <script>
+    // You can dynamically replace this with login or user input later
+    const userName = "you're safe here ❤️"; // Or use prompt("Enter your name")
+    document.getElementById("username").innerText = userName;
+
+    // Get location using Geolocation API
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        try {
+          const response = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
+          const city = response.data.city || response.data.locality || "Unknown";
+          document.getElementById("location").innerText = city;
+        } catch (error) {
+          document.getElementById("location").innerText = "Unable to detect";
+        }
+      });
+    } else {
+      document.getElementById("location").innerText = "Geolocation not supported.";
+    }
+  </script>
+</body>
+</html>

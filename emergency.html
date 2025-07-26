@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emergency Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="scripts/emergency.js"></script>
+</head>
+<body class="emergency-page">
+  <div class="overlay">
+    <h1>Emergency Mode Activated 🚨</h1>
+    <p id="bot-msg">📢 Speaking safety message...</p>
+
+    <div class="status">
+      <p id="status-location">📍 Fetching location...</p>
+      <p id="status-camera">🎥 Capturing camera...</p>
+      <p id="status-audio">🎙️ Recording audio...</p>
+    </div>
+
+    <video id="cam" autoplay muted playsinline></video>
+    <canvas id="snapshot" width="300" height="200" style="display:none;"></canvas>
+
+    <div class="sos-buttons">
+      <button onclick="fakeCall()">📱 Fake Call</button>
+      <button onclick="sendTextAlert()">📩 Text Alert</button>
+    </div>
+  </div>
+</body>
+</html>

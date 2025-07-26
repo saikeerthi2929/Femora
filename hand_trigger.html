@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hand Trigger - Femora</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="hand-body">
+      <div class="background-container">
+  <img src="assets/background22.jpg" class="bg-media" alt="Background" />
+</div>
+  <div class="hand-container">
+    <h1>✋ Hand Gesture Trigger</h1>
+    <p>Show your palm to activate emergency SOS.</p>
+    <video id="webcam" autoplay playsinline width="400" height="300"></video>
+    <p id="hand-status">Detecting...</p>
+  </div>
+
+  <!-- TensorFlow + Handpose -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+  <script src="scripts/hand.js"></script>
+</body>
+</html>

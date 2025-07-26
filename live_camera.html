@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Camera - Femora</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="livecam-body">
+      <div class="background-container">
+  <img src="assets/background22.jpg" class="bg-media" alt="Background" />
+</div>
+  <div class="livecam-container">
+    <h1>📹 Live Camera Feed</h1>
+    <video id="video" autoplay playsinline width="400" height="300"></video>
+    <p id="status">Recording live...</p>
+    <button onclick="stopRecording()">⏹️ Stop & Save</button>
+  </div>
+
+  <script src="scripts/camera.js"></script>
+</body>
+</html>
